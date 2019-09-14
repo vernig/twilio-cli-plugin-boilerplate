@@ -1,0 +1,60 @@
+{
+  "name": "@twilio/plugin-myplugin",
+  "description": "My own plugin",
+  "version": "1.1.8",
+  "author": "gverni",
+  "dependencies": {
+    "@oclif/command": "^1.5.18",
+    "@oclif/config": "^1.13.3",
+    "@twilio/cli-core": "^4.0.0"
+  },
+  "devDependencies": {
+    "@oclif/dev-cli": "^1.22.2",
+    "@oclif/test": "^1.2.5",
+    "@twilio/cli-test": "^2.0.0",
+    "chai": "^4.2.0",
+    "eslint": "^4.19.1",
+    "eslint-config-oclif": "^1.5.1",
+    "globby": "^8.0.2",
+    "mocha": "^6.2.0",
+    "nyc": "^14.1.1"
+  },
+  "engines": {
+    "node": ">=8.0.0"
+  },
+  "files": [
+    "/npm-shrinkwrap.json",
+    "/oclif.manifest.json",
+    "/src",
+    "/yarn.lock"
+  ],
+  "homepage": "",
+  "keywords": [
+    "oclif-plugin"
+  ],
+  "license": "MIT",
+  "oclif": {
+    "name": "myplugin",
+    "commands": "./src/commands",
+    "bin": "twilio",
+    "devPlugins": [
+      "@oclif/plugin-help"
+    ],
+    "topics": {
+      "myplugin": {
+        "description": "Just my plugin"
+      }
+    }
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/twilio/plugin-debugger.git"
+  },
+  "scripts": {
+    "postpack": "rm -f oclif.manifest.json",
+    "posttest": "eslint --ignore-path .gitignore . && npm audit",
+    "prepack": "oclif-dev manifest && oclif-dev readme",
+    "test": "nyc --check-coverage --lines 90 --reporter=html --reporter=text mocha --forbid-only \"test/**/*.test.js\"",
+    "version": "oclif-dev readme && git add README.md"
+  }
+}
