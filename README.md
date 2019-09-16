@@ -1,4 +1,4 @@
-# @twilio/plugin-myplugin
+# twilio-cli plugin boilerplate
 
 This is a boilerplate for a twilio-cli plugin (inspired by https://github.com/twilio/plugin-debugger comm)
 
